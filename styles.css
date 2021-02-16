@@ -1,0 +1,52 @@
+
+html {
+    background-image: url(/images/background.jpeg);
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.main {
+    margin-top: auto;
+    margin-bottom: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: 100px;
+    margin-right: 100px;  
+}
+
+.choice-box {
+    width: 500px;
+}
+
+.header {
+    color: azure;
+    margin-top: 5%;
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+img {
+    display: block;
+    height: 50%;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10px;  
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+img:hover {
+    box-shadow: 1px 1px 2px 3px rgba(255, 255, 255, 0.29);
+    cursor: pointer;
+}
+
+/*.choice-box {} */
+
+
+.footer {
+    color: azure;
+    margin-top: 5%;
+    text-align: center;
+}

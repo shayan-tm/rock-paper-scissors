@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>Rock Paper Scissors</title>
+</head>
+
+<body>
+
+  <script>
+   
+   let playerScore = 0;
+   let computerScore = 0;
+    
+   console.log('To start the game please type "game()"');
+    function game() {
+
+    for (let round = 0; round < 5; round++) {
+      let playerSelection = prompt("This game consists of 5 rounds.\nPlease choose between rock, paper and scissors.\nRound: " + round).toLowerCase();
+
+      computerPlay();
+
+      playRound(playerSelection, computerSelection);
+     }
+     
+    if (playerScore > computerScore) {
+      console.log("The final scores are: Computer " + computerScore + ", You:" + playerScore + ". You won this game!")
+    } else { if (playerScore < computerScore) {
+      console.log("The final scores are: Computer " + computerScore + ", You:" + playerScore + ". You lost this game!")
+    } else {
+      console.log("The final scores are: Computer " + computerScore + ", You:" + playerScore + ". This game is a tie!")
+    }
+      
+    }
+      
+    }
+    
+    
+    function computerPlay() {   
+      switch (Math.floor(Math.random() * 3)) {
+       case 0:
+        computerSelection = "rock";
+        break;
+       case 1:
+        computerSelection = "paper";
+        break;
+       case 2:
+        computerSelection = "scissors";
+      }
+       return computerSelection;
+    }
+
+   function playRound(playerSelection, computerSelection) {
+     if (playerSelection == computerSelection) { //it's a tie
+       console.log("You chose " + playerSelection + ". " + " The computer chose " + computerSelection + ". " + "It's a tie.");
+     } else { if (playerSelection == "rock") { //user chooses rock
+       if (computerSelection == "paper") {
+        console.log("You chose " + playerSelection + ". " + " The computer chose " + computerSelection + ". " + "You lose! Paper beats rock.");
+        computerScore = computerScore + 1;
+       } else { if (computerSelection == "scissors") {
+        console.log("You chose " + playerSelection + ". " + " The computer chose " + computerSelection + ". " + "You Win! Rock beats scissors.");
+        playerScore = playerScore + 1;
+        }
+       }
+     } else { //user chooses paper
+       if (playerSelection == "paper") {
+         if (computerSelection == "rock") {
+          console.log("You chose " + playerSelection + ". " + " The computer chose " + computerSelection + ". " + "You Win! Paper beats rock.");
+          playerScore = playerScore + 1;
+         } else { if (computerSelection == "scissors") {
+          console.log("You chose " + playerSelection + ". " + " The computer chose " + computerSelection + ". " + "You Lose! Scissors beat paper.");
+          computerScore = computerScore + 1;
+         } } }
+          else { //user chooses scissors
+         if (playerSelection == "scissors") { if (computerSelection == "paper") {
+          console.log("You chose " + playerSelection + ". " + " The computer chose " + computerSelection + ". " + "You Win! Scissors beat paper.");
+          playerScore = playerScore + 1;
+         }
+          else { if (computerSelection == "rock") {
+          console.log("You chose " + playerSelection + ". " + " The computer chose " + computerSelection + ". " + "You Lose! Rock beats scissors.");
+          computerScore = computerScore + 1;
+         }       
+        }       
+       }
+      }
+     }      
+    }
+   }
+
+
+  </script>
+  
+  
+
+</body>
+
+</html>
